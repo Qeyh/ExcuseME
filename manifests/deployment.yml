@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: qeyhexcuseme 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qeyhexcuseme
+  template:
+    metadata:
+      labels:
+        app: qeyhexcuseme 
+    spec:
+      containers:
+        - name: qeyhexcuseme 
+          image: excuseme.azurecr.io/qeyhexcuseme
+          ports:
+          - containerPort: 80
