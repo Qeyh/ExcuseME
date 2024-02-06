@@ -24,7 +24,7 @@ stages:
       displayName: Build an image
       inputs:
         command: build
-        dockerfile: '**/Dockerfile'  # Adjust the path to match the actual location of Dockerfile
+        dockerfile: './Dockerfile'  # Adjust the path to match the actual location of Dockerfile
         tags: |
           $(tag)
 
@@ -39,6 +39,6 @@ stages:
         containerRegistry: 'excuseme-1493'  # Replace with your container registry name
         repository: 'excuseme'               # Replace with your repository name
         command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'          # Adjust the path to match the actual location of Dockerfile
+        Dockerfile: './Dockerfile'          # Adjust the path to match the actual location of Dockerfile
         tags: |
           $(tag)
