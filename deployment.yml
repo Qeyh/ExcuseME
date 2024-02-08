@@ -1,29 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: excuseme-wa-deployment
-  namespace: dev
+  name: index-deployment
+  labels:
+    app: index
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: excuseme-wa
+      app: index
   template:
     metadata:
       labels:
-        app: excuseme-wa
+        app: index
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+      - name: index-container
+        image: excuseme:latest
         ports:
         - containerPort: 80
-        volumeMounts:
-        - name: html-volume
-          mountPath: /usr/share/nginx/html
-      volumes:
-      - name: html-volume
-        emptyDir: {}
-      - name: config-volume
-        configMap:
-          name: excuseme-configmap
